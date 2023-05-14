@@ -1,0 +1,7 @@
+pyside6-uic Form_AddName.ui -o Form_AddName.py
+pyside6-uic Form_EditParts.ui -o Form_EditParts.py
+pyside6-uic Form_Main.ui -o Form_Main.py
+pyside6-uic Form_NewEvent.ui -o Form_NewEvent.py
+pyside6-uic Form_refParts.ui -o Form_refParts.py
+pyside6-uic Form_refTypeParts.ui -o Form_refTypeParts.py
+pyside6-uic Form_refVendors.ui -o Form_refVendors.py
