@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>104</height>
+    <width>420</width>
+    <height>144</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,10 +18,18 @@
     <widget class="QLabel" name="label_name">
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <family>Arial</family>
+       <pointsize>12</pointsize>
        <italic>true</italic>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: none;
+color: black;
+font-family: &quot;Arial&quot;;
+font-size: 12pt;
+border: none;</string>
      </property>
      <property name="text">
       <string>Наименование</string>
@@ -29,30 +37,94 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_name"/>
+    <widget class="QLineEdit" name="edit_name">
+     <property name="styleSheet">
+      <string notr="true">color: black;
+font-family: &quot;Arial&quot;;
+font-size: 14pt;
+margin: 2px;
+padding: 3px;</string>
+     </property>
+    </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="btn_ok">
-       <property name="font">
-        <font>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Ок</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btn_cancel">
-       <property name="text">
-        <string>Отмена</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <widget class="QFrame" name="frame1">
+     <property name="styleSheet">
+      <string notr="true">color: black;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="btn_ok">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+font: 12pt &quot;Arial&quot;;
+margin: 5px;
+padding: 5px;
+color: black;
+font-weight: bold;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;
+}
+QPushButton:hover {
+background-color: rgba(2, 144, 0, 100);
+color:white;
+font-weight: bold;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;
+}
+QPushButton:pressed {
+background-color: rgba(2, 144, 0, 150);
+color:white;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Ок</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_cancel">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+font: 12pt &quot;Arial&quot;;
+margin: 5px;
+padding: 5px;
+color: black;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;
+}
+QPushButton:hover {
+background-color: rgba(2, 144, 0, 100);
+color:white;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;
+}
+QPushButton:pressed {
+background-color: rgba(2, 144, 0, 150);
+color:white;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Отмена</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
   </layout>
  </widget>

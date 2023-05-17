@@ -15,49 +15,110 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDialog, QHBoxLayout, QLabel,
-    QLineEdit, QPushButton, QSizePolicy, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHBoxLayout,
+    QLabel, QLineEdit, QPushButton, QSizePolicy,
+    QVBoxLayout, QWidget)
 
 class Ui_AddNameForm(object):
     def setupUi(self, AddNameForm):
         if not AddNameForm.objectName():
             AddNameForm.setObjectName(u"AddNameForm")
-        AddNameForm.resize(400, 104)
+        AddNameForm.resize(420, 144)
         self.verticalLayout = QVBoxLayout(AddNameForm)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.label_name = QLabel(AddNameForm)
         self.label_name.setObjectName(u"label_name")
         font = QFont()
-        font.setPointSize(10)
+        font.setFamilies([u"Arial"])
+        font.setPointSize(12)
         font.setBold(True)
         font.setItalic(True)
         self.label_name.setFont(font)
+        self.label_name.setStyleSheet(u"background-color: none;\n"
+"color: black;\n"
+"font-family: \"Arial\";\n"
+"font-size: 12pt;\n"
+"border: none;")
 
         self.verticalLayout.addWidget(self.label_name)
 
-        self.lineEdit_name = QLineEdit(AddNameForm)
-        self.lineEdit_name.setObjectName(u"lineEdit_name")
+        self.edit_name = QLineEdit(AddNameForm)
+        self.edit_name.setObjectName(u"edit_name")
+        self.edit_name.setStyleSheet(u"color: black;\n"
+"font-family: \"Arial\";\n"
+"font-size: 14pt;\n"
+"margin: 2px;\n"
+"padding: 3px;")
 
-        self.verticalLayout.addWidget(self.lineEdit_name)
+        self.verticalLayout.addWidget(self.edit_name)
 
-        self.horizontalLayout = QHBoxLayout()
+        self.frame1 = QFrame(AddNameForm)
+        self.frame1.setObjectName(u"frame1")
+        self.frame1.setStyleSheet(u"color: black;\n"
+"border: 1px solid rgba(0, 0, 0, 200);\n"
+"border-radius : 5px;")
+        self.horizontalLayout = QHBoxLayout(self.frame1)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.btn_ok = QPushButton(AddNameForm)
+        self.btn_ok = QPushButton(self.frame1)
         self.btn_ok.setObjectName(u"btn_ok")
         font1 = QFont()
+        font1.setFamilies([u"Arial"])
+        font1.setPointSize(12)
         font1.setBold(True)
+        font1.setItalic(False)
         self.btn_ok.setFont(font1)
+        self.btn_ok.setStyleSheet(u"QPushButton {\n"
+"font: 12pt \"Arial\";\n"
+"margin: 5px;\n"
+"padding: 5px;\n"
+"color: black;\n"
+"font-weight: bold;\n"
+"border: 1px solid rgba(0, 0, 0, 200);\n"
+"border-radius : 5px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"background-color: rgba(2, 144, 0, 100);\n"
+"color:white;\n"
+"font-weight: bold;\n"
+"border: 1px solid rgba(0, 0, 0, 200);\n"
+"border-radius : 5px;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgba(2, 144, 0, 150);\n"
+"color:white;\n"
+"border: 1px solid rgba(0, 0, 0, 200);\n"
+"border-radius : 5px;\n"
+"}")
 
         self.horizontalLayout.addWidget(self.btn_ok)
 
-        self.btn_cancel = QPushButton(AddNameForm)
+        self.btn_cancel = QPushButton(self.frame1)
         self.btn_cancel.setObjectName(u"btn_cancel")
+        self.btn_cancel.setStyleSheet(u"QPushButton {\n"
+"font: 12pt \"Arial\";\n"
+"margin: 5px;\n"
+"padding: 5px;\n"
+"color: black;\n"
+"border: 1px solid rgba(0, 0, 0, 200);\n"
+"border-radius : 5px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"background-color: rgba(2, 144, 0, 100);\n"
+"color:white;\n"
+"border: 1px solid rgba(0, 0, 0, 200);\n"
+"border-radius : 5px;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgba(2, 144, 0, 150);\n"
+"color:white;\n"
+"border: 1px solid rgba(0, 0, 0, 200);\n"
+"border-radius : 5px;\n"
+"}")
 
         self.horizontalLayout.addWidget(self.btn_cancel)
 
 
-        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.verticalLayout.addWidget(self.frame1)
 
 
         self.retranslateUi(AddNameForm)

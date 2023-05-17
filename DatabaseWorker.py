@@ -27,13 +27,13 @@ class Data:
                             (type, idpart, datetime, qty, id))
         self.connection.commit()
 
-    def delete_part_query(self, id):
+    def delete_event_query(self, id):
         self.cursor.execute("DELETE FROM wrkEvents WHERE id=?",
                             (id,))
         self.connection.commit()
 
     def add_part_query(self, idcategory, idvendor, name, notes):
-        self.cursor.execute("INSERT INTO refParts (idCategory, idVendor, Name, Notes)VALUES (?, ?, ?, ?)",
+        self.cursor.execute("INSERT INTO refParts (idCategory, idVendor, Name, Notes) VALUES (?, ?, ?, ?)",
                             (idcategory, idvendor, name, notes))
         self.connection.commit()
 
@@ -45,6 +45,16 @@ class Data:
     def delete_part_query(self, id):
         self.cursor.execute("DELETE FROM refParts WHERE id=?",
                             (id,))
+        self.connection.commit()
+
+    def add_category_query(self, name, notes):
+        self.cursor.execute("INSERT INTO refCategories (Name, Notes) VALUES (?, ?)",
+                            (name, notes))
+        self.connection.commit()
+
+    def add_vendor_query(self, name, notes):
+        self.cursor.execute("INSERT INTO refVendors (Name, Notes) VALUES (?, ?)",
+                            (name, notes))
         self.connection.commit()
 
     def get_total(self, column, filter=None, value=None):
@@ -122,6 +132,13 @@ class Data:
             data = self.cursor.execute(sql_query, (idcat,)).fetchall()
         else:
             data = self.cursor.execute(sql_query).fetchall()
+
+        return data
+
+    def get_vendors(self):
+        data = self.cursor.execute("SELECT id, Name "
+                                   "FROM refVendors "
+                                   ).fetchall()
 
         return data
 

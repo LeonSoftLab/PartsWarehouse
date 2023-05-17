@@ -23,7 +23,7 @@ border-radius : 5px;</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1,0">
       <item>
-       <widget class="QLabel" name="label_cat">
+       <widget class="QLabel" name="label_category">
         <property name="styleSheet">
          <string notr="true">background-color: none;
 color: black;
@@ -37,7 +37,7 @@ border: none;</string>
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="cmb_cat">
+       <widget class="QComboBox" name="cmb_category">
         <property name="styleSheet">
          <string notr="true">color: black;
 font-family: &quot;Arial&quot;;
@@ -48,7 +48,7 @@ padding: 3px;</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btn_edit_cat">
+       <widget class="QPushButton" name="btn_add_category">
         <property name="styleSheet">
          <string notr="true">QPushButton {
 background-color: rgba(207, 0, 3, 100);
@@ -66,7 +66,7 @@ color:white;
 }</string>
         </property>
         <property name="text">
-         <string>Редактировать</string>
+         <string>Добавить</string>
         </property>
        </widget>
       </item>
@@ -107,7 +107,7 @@ padding: 3px;</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btn_edit_vendor">
+       <widget class="QPushButton" name="btn_add_vendor">
         <property name="styleSheet">
          <string notr="true">QPushButton {
 background-color: rgba(207, 0, 3, 100);
@@ -125,7 +125,7 @@ color:white;
 }</string>
         </property>
         <property name="text">
-         <string>Редактировать</string>
+         <string>Добавить</string>
         </property>
        </widget>
       </item>
@@ -155,7 +155,7 @@ border: none;</string>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_name">
+       <widget class="QLineEdit" name="edit_name">
         <property name="styleSheet">
          <string notr="true">color: black;
 font-family: &quot;Arial&quot;;
@@ -191,7 +191,7 @@ border: none;</string>
        </widget>
       </item>
       <item>
-       <widget class="QTextEdit" name="textEdit_notes">
+       <widget class="QTextEdit" name="edit_notes">
         <property name="styleSheet">
          <string notr="true">color: black;
 font-family: &quot;Arial&quot;;

@@ -1,8 +1,7 @@
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow, QDialog, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 
 from forms.Form_Main import Ui_MainForm
-
 from forms.Unit_refParts import RefPartsForm
 from forms.Unit_EditEvent import EditEventForm
 from DatabaseWorker import Data
@@ -54,10 +53,10 @@ class MainForm(QMainWindow):
 
             self.window_EditEvent.edit_ui_data(row_items)
 
-        self.window_EditEvent.show()
+        self.window_EditEvent.exec()
 
     def on_click_delete_event(self):
-        result = QMessageBox.warning(self, "PartsWarehouse", "Внимание! Вы уверены что хотите удалить запись?",
+        result = QMessageBox.warning(self, "Движения по складу", "Внимание! Вы уверены что хотите удалить запись?",
                                      QMessageBox.StandardButton.Ok, QMessageBox.StandardButton.Cancel)
         if result == QMessageBox.StandardButton.Ok:
             index_row = self.ui.tableView.currentIndex().row()

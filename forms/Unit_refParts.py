@@ -1,8 +1,6 @@
 from PySide6.QtWidgets import QMainWindow, QMessageBox
-from PySide6 import QtCore
 
 from forms.Form_refParts import Ui_RefPartsForm
-
 from forms.Unit_EditPart import EditPartForm
 from DatabaseWorker import Data
 
@@ -23,21 +21,21 @@ class RefPartsForm(QMainWindow):
         sender = self.sender()
         if sender.objectName() == "btn_add":
             self.window_EditPart = EditPartForm(self.load_refparts, -1)
-            self.window_EditPart.setWindowTitle("Добавление события")
+            self.window_EditPart.setWindowTitle("Добавление зап. части")
         else:
             index_row = self.ui.tableView.currentIndex().row()
             row_items = self.ui.tableView.model().get_row_items(index_row)
             id_row = row_items[0]
 
             self.window_EditPart = EditPartForm(self.load_refparts, id_row)
-            self.window_EditPart.setWindowTitle("Редактирование события")
+            self.window_EditPart.setWindowTitle("Редактирование зап. части")
 
             self.window_EditPart.edit_ui_data(row_items)
 
-        self.window_EditPart.show()
+        self.window_EditPart.exec()
 
     def on_click_delete_part(self):
-        result = QMessageBox.warning(self, "PartsWarehouse", "Внимание! Вы уверены что хотите удалить запись?",
+        result = QMessageBox.warning(self, "Справочник зап. частей", "Внимание! Вы уверены что хотите удалить запись?",
                                      QMessageBox.StandardButton.Ok, QMessageBox.StandardButton.Cancel)
         if result == QMessageBox.StandardButton.Ok:
             index_row = self.ui.tableView.currentIndex().row()

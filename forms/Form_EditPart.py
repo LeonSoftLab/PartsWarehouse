@@ -33,29 +33,29 @@ class Ui_EditPartForm(object):
 "border-radius : 5px;")
         self.horizontalLayout = QHBoxLayout(self.frame1)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.label_cat = QLabel(self.frame1)
-        self.label_cat.setObjectName(u"label_cat")
-        self.label_cat.setStyleSheet(u"background-color: none;\n"
+        self.label_category = QLabel(self.frame1)
+        self.label_category.setObjectName(u"label_category")
+        self.label_category.setStyleSheet(u"background-color: none;\n"
 "color: black;\n"
 "font-family: \"Arial\";\n"
 "font-size: 12pt;\n"
 "border: none;")
 
-        self.horizontalLayout.addWidget(self.label_cat)
+        self.horizontalLayout.addWidget(self.label_category)
 
-        self.cmb_cat = QComboBox(self.frame1)
-        self.cmb_cat.setObjectName(u"cmb_cat")
-        self.cmb_cat.setStyleSheet(u"color: black;\n"
+        self.cmb_category = QComboBox(self.frame1)
+        self.cmb_category.setObjectName(u"cmb_category")
+        self.cmb_category.setStyleSheet(u"color: black;\n"
 "font-family: \"Arial\";\n"
 "font-size: 12pt;\n"
 "margin: 2px;\n"
 "padding: 3px;")
 
-        self.horizontalLayout.addWidget(self.cmb_cat)
+        self.horizontalLayout.addWidget(self.cmb_category)
 
-        self.btn_edit_cat = QPushButton(self.frame1)
-        self.btn_edit_cat.setObjectName(u"btn_edit_cat")
-        self.btn_edit_cat.setStyleSheet(u"QPushButton {\n"
+        self.btn_add_category = QPushButton(self.frame1)
+        self.btn_add_category.setObjectName(u"btn_add_category")
+        self.btn_add_category.setStyleSheet(u"QPushButton {\n"
 "background-color: rgba(207, 0, 3, 100);\n"
 "font: 10pt \"Arial\";\n"
 "margin: 5px;\n"
@@ -70,7 +70,7 @@ class Ui_EditPartForm(object):
 "color:white;\n"
 "}")
 
-        self.horizontalLayout.addWidget(self.btn_edit_cat)
+        self.horizontalLayout.addWidget(self.btn_add_category)
 
         self.horizontalLayout.setStretch(1, 1)
 
@@ -103,9 +103,9 @@ class Ui_EditPartForm(object):
 
         self.horizontalLayout_2.addWidget(self.cmb_vendor)
 
-        self.btn_edit_vendor = QPushButton(self.frame2)
-        self.btn_edit_vendor.setObjectName(u"btn_edit_vendor")
-        self.btn_edit_vendor.setStyleSheet(u"QPushButton {\n"
+        self.btn_add_vendor = QPushButton(self.frame2)
+        self.btn_add_vendor.setObjectName(u"btn_add_vendor")
+        self.btn_add_vendor.setStyleSheet(u"QPushButton {\n"
 "background-color: rgba(207, 0, 3, 100);\n"
 "font: 10pt \"Arial\";\n"
 "margin: 5px;\n"
@@ -120,7 +120,7 @@ class Ui_EditPartForm(object):
 "color:white;\n"
 "}")
 
-        self.horizontalLayout_2.addWidget(self.btn_edit_vendor)
+        self.horizontalLayout_2.addWidget(self.btn_add_vendor)
 
         self.horizontalLayout_2.setStretch(1, 1)
 
@@ -143,15 +143,15 @@ class Ui_EditPartForm(object):
 
         self.horizontalLayout_3.addWidget(self.label_name)
 
-        self.lineEdit_name = QLineEdit(self.frame3)
-        self.lineEdit_name.setObjectName(u"lineEdit_name")
-        self.lineEdit_name.setStyleSheet(u"color: black;\n"
+        self.edit_name = QLineEdit(self.frame3)
+        self.edit_name.setObjectName(u"edit_name")
+        self.edit_name.setStyleSheet(u"color: black;\n"
 "font-family: \"Arial\";\n"
 "font-size: 14pt;\n"
 "margin: 2px;\n"
 "padding: 3px;")
 
-        self.horizontalLayout_3.addWidget(self.lineEdit_name)
+        self.horizontalLayout_3.addWidget(self.edit_name)
 
 
         self.verticalLayout_2.addWidget(self.frame3)
@@ -173,15 +173,15 @@ class Ui_EditPartForm(object):
 
         self.verticalLayout.addWidget(self.label_notes)
 
-        self.textEdit_notes = QTextEdit(self.frame4)
-        self.textEdit_notes.setObjectName(u"textEdit_notes")
-        self.textEdit_notes.setStyleSheet(u"color: black;\n"
+        self.edit_notes = QTextEdit(self.frame4)
+        self.edit_notes.setObjectName(u"edit_notes")
+        self.edit_notes.setStyleSheet(u"color: black;\n"
 "font-family: \"Arial\";\n"
 "font-size: 14pt;\n"
 "margin: 2px;\n"
 "padding: 3px;")
 
-        self.verticalLayout.addWidget(self.textEdit_notes)
+        self.verticalLayout.addWidget(self.edit_notes)
 
 
         self.verticalLayout_2.addWidget(self.frame4)
@@ -219,10 +219,10 @@ class Ui_EditPartForm(object):
 
     def retranslateUi(self, EditPartForm):
         EditPartForm.setWindowTitle(QCoreApplication.translate("EditPartForm", u"Dialog", None))
-        self.label_cat.setText(QCoreApplication.translate("EditPartForm", u"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f", None))
-        self.btn_edit_cat.setText(QCoreApplication.translate("EditPartForm", u"\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
+        self.label_category.setText(QCoreApplication.translate("EditPartForm", u"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f", None))
+        self.btn_add_category.setText(QCoreApplication.translate("EditPartForm", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c", None))
         self.label_vendor.setText(QCoreApplication.translate("EditPartForm", u"\u041f\u043e\u0441\u0442\u0430\u0432\u0449\u0438\u043a", None))
-        self.btn_edit_vendor.setText(QCoreApplication.translate("EditPartForm", u"\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
+        self.btn_add_vendor.setText(QCoreApplication.translate("EditPartForm", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c", None))
         self.label_name.setText(QCoreApplication.translate("EditPartForm", u"\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435", None))
         self.label_notes.setText(QCoreApplication.translate("EditPartForm", u"\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435", None))
         self.btn_save.setText(QCoreApplication.translate("EditPartForm", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c", None))

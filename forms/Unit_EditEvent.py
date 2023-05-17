@@ -49,16 +49,12 @@ class EditEventForm(QDialog):
     def edit_ui_data(self, row_data):
         self.ui.cmb_type_event.setCurrentIndex(
             self.ui.cmb_type_event.findText(row_data[1]))
-
         self.ui.cmb_category.setCurrentIndex(
             self.ui.cmb_category.findData(row_data[2]))
-
         self.ui.cmb_part.setCurrentIndex(
             self.ui.cmb_part.findData(row_data[4]))
-
         self.ui.dte_date_time.setDateTime(QtCore.QDateTime.fromString(row_data[6]
                                                                       , 'yyyy-MM-dd hh:mm:ss'))
-
         self.ui.edit_qty.setText(str(row_data[7]))
 
     def on_click_save(self):
@@ -77,4 +73,5 @@ class EditEventForm(QDialog):
             self.func_refresh()
             self.close()
         else:
-            QMessageBox.warning(self, "PartsWarehouse", "Проверьте заполнение всех данных на форме и попробуйте ещё раз.")
+            QMessageBox.warning(self, "Редактирование движения по складу",
+                                "Проверьте заполнение всех данных на форме и попробуйте ещё раз.")
