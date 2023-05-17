@@ -27,8 +27,23 @@ class Data:
                             (type, idpart, datetime, qty, id))
         self.connection.commit()
 
-    def delete_event_query(self, id):
+    def delete_part_query(self, id):
         self.cursor.execute("DELETE FROM wrkEvents WHERE id=?",
+                            (id,))
+        self.connection.commit()
+
+    def add_part_query(self, idcategory, idvendor, name, notes):
+        self.cursor.execute("INSERT INTO refParts (idCategory, idVendor, Name, Notes)VALUES (?, ?, ?, ?)",
+                            (idcategory, idvendor, name, notes))
+        self.connection.commit()
+
+    def update_part_query(self, idcategory, idvendor, name, notes, id):
+        self.cursor.execute("UPDATE refParts SET idCategory=?, idVendor=?, Name=?, Notes=? WHERE id=?",
+                            (idcategory, idvendor, name, notes, id))
+        self.connection.commit()
+
+    def delete_part_query(self, id):
+        self.cursor.execute("DELETE FROM refParts WHERE id=?",
                             (id,))
         self.connection.commit()
 
@@ -46,12 +61,11 @@ class Data:
 
         return '0'
 
-    def get_total_by_category(self, column, idcat, valuetype):
+    def get_total_by_partcat(self, column, filtr, valuefiltr, valuetype):
         sql_query = f"SELECT SUM(wrk.{column}) FROM wrkEvents wrk "
         sql_query += " INNER JOIN refParts rP on rP.id = wrk.idPart "
-        sql_query += " WHERE idCategory = ? AND Type = ? "
-        query = self.cursor.execute(sql_query, (idcat,valuetype)).fetchone()
-
+        sql_query += f" WHERE {filtr} = ? AND Type = ? "
+        query = self.cursor.execute(sql_query, (valuefiltr, valuetype)).fetchone()
         if query is not None:
             return str(query[0])
 
@@ -79,7 +93,7 @@ class Data:
     def get_table_refparts(self):
         data = self.cursor.execute("SELECT "
                                    "   rP.id as 'Код', "
-                                   "   rP.idCategory as 'Код Категории', "
+                                   "   rP.idCategory as 'Код категории', "
                                    "   rC.Name as 'Категория зап. части', "
                                    "   rP.idVendor as 'Код поставщика', "
                                    "   rV.Name as 'Поставщик зап. части', "
@@ -120,8 +134,14 @@ class Data:
     def total_outcome(self):
         return self.get_total(column="Qty", filter="Type", value="Расход")
 
-    def income_by_category(self, _idcat):
-        return self.get_total_by_category(column="Qty", idcat=_idcat, valuetype="Приход")
+    def income_by_category(self, idcat):
+        return self.get_total_by_partcat(column="Qty", filtr="idCategory", valuefiltr=idcat, valuetype="Приход")
 
-    def outcome_by_category(self, _idcat):
-        return self.get_total_by_category(column="Qty", idcat=_idcat, valuetype="Расход")
+    def outcome_by_category(self, idcat):
+        return self.get_total_by_partcat(column="Qty", filtr="idCategory", valuefiltr=idcat, valuetype="Расход")
+
+    def income_by_part(self, idpart):
+        return self.get_total_by_partcat(column="Qty", filtr="idPart", valuefiltr=idpart, valuetype="Приход")
+
+    def outcome_by_part(self, idpart):
+        return self.get_total_by_partcat(column="Qty", filtr="idPart", valuefiltr=idpart, valuetype="Расход")

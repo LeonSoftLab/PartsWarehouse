@@ -10,6 +10,7 @@ class CustomTableModel(QAbstractTableModel):
         super(CustomTableModel, self).__init__()
         self._data = data
         self._headers = headers
+    #TODO: в модели предусмотреть работу с базой
 
     def rowCount(self, parent=None):
         return len(self._data)
@@ -38,6 +39,9 @@ class CustomTableModel(QAbstractTableModel):
         #    return Qt.DecorationRole
         #else:
         #    return Qt.ItemIsSelectable
+
+    def get_row_items(self, index):
+        return self._data[index]
 
 
 class CustomDelegate(QStyledItemDelegate):

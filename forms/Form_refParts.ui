@@ -14,71 +14,107 @@
    <string>Справочник зап. частей</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QPushButton" name="btn_add">
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
+     <widget class="QFrame" name="">
+      <property name="styleSheet">
+       <string notr="true">color: black;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="btn_add">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
 font: 10pt &quot;Arial&quot;;
 background-color: rgba(0, 153, 255, 100);
+margin: 5px;
+padding: 5px;
 }
 QPushButton:hover {
+background-color: rgba(2, 144, 0, 100);
+color:white;
+}
+QPushButton:pressed {
 background-color: rgba(2, 144, 0, 150);
 color:white;
 }</string>
-        </property>
-        <property name="text">
-         <string>Добавить</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btn_edit">
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
+         </property>
+         <property name="text">
+          <string>Добавить</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_edit">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
 font: 10pt &quot;Arial&quot;;
 background-color: rgba(0, 153, 255, 100);
+margin: 5px;
+padding: 5px;
 }
 QPushButton:hover {
+background-color: rgba(2, 144, 0, 100);
+color:white;
+}
+QPushButton:pressed {
 background-color: rgba(2, 144, 0, 150);
 color:white;
 }</string>
-        </property>
-        <property name="text">
-         <string>Редактировать</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btn_del">
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
+         </property>
+         <property name="text">
+          <string>Редактировать</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_del">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
 font: 10pt &quot;Arial&quot;;
 background-color: rgba(0, 153, 255, 100);
+margin: 5px;
+padding: 5px;
 }
 QPushButton:hover {
+background-color: rgba(2, 144, 0, 100);
+color:white;
+}
+QPushButton:pressed {
 background-color: rgba(2, 144, 0, 150);
 color:white;
 }</string>
-        </property>
-        <property name="text">
-         <string>Удалить</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+         </property>
+         <property name="text">
+          <string>Удалить</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </item>
     <item>
      <widget class="QTableView" name="tableView">
       <property name="styleSheet">
        <string notr="true">QTableView {
-	background-color: rgba(255, 255, 255, 100)
+ background-color: rgba(255, 255, 255, 30);
+ border: 1px solid rgba(0, 0, 0, 200);
+ color: black;
+ border-radius : 5px;
 }
 
 QTableView::section {
-background-color: rgba(30, 144, 255, 100)
+ background-color: rgba(30, 144, 255, 100);
+ color: black;
+ font-weight: bold;
+ border: 1px solid rgba(0, 0, 0, 200);
+ height: 40px;
+ border-radius : 5px;
 }
 
 QTableView::item:selected{

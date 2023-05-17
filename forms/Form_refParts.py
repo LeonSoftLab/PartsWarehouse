@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QHeaderView, QMainWindow,
-    QPushButton, QSizePolicy, QTableView, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
+    QMainWindow, QPushButton, QSizePolicy, QTableView,
+    QVBoxLayout, QWidget)
 
 class Ui_RefPartsForm(object):
     def setupUi(self, RefPartsForm):
@@ -26,43 +26,67 @@ class Ui_RefPartsForm(object):
         RefPartsForm.resize(674, 560)
         self.centralwidget = QWidget(RefPartsForm)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.centralwidget.setStyleSheet(u"")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.horizontalLayout = QHBoxLayout()
+        self.frame = QFrame(self.centralwidget)
+        self.frame.setObjectName(u"frame")
+        self.frame.setStyleSheet(u"color: black;\n"
+"border: 1px solid rgba(0, 0, 0, 200);\n"
+"border-radius : 5px;")
+        self.horizontalLayout = QHBoxLayout(self.frame)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.btn_add = QPushButton(self.centralwidget)
+        self.btn_add = QPushButton(self.frame)
         self.btn_add.setObjectName(u"btn_add")
         self.btn_add.setStyleSheet(u"QPushButton {\n"
 "font: 10pt \"Arial\";\n"
 "background-color: rgba(0, 153, 255, 100);\n"
+"margin: 5px;\n"
+"padding: 5px;\n"
 "}\n"
 "QPushButton:hover {\n"
+"background-color: rgba(2, 144, 0, 100);\n"
+"color:white;\n"
+"}\n"
+"QPushButton:pressed {\n"
 "background-color: rgba(2, 144, 0, 150);\n"
 "color:white;\n"
 "}")
 
         self.horizontalLayout.addWidget(self.btn_add)
 
-        self.btn_edit = QPushButton(self.centralwidget)
+        self.btn_edit = QPushButton(self.frame)
         self.btn_edit.setObjectName(u"btn_edit")
         self.btn_edit.setStyleSheet(u"QPushButton {\n"
 "font: 10pt \"Arial\";\n"
 "background-color: rgba(0, 153, 255, 100);\n"
+"margin: 5px;\n"
+"padding: 5px;\n"
 "}\n"
 "QPushButton:hover {\n"
+"background-color: rgba(2, 144, 0, 100);\n"
+"color:white;\n"
+"}\n"
+"QPushButton:pressed {\n"
 "background-color: rgba(2, 144, 0, 150);\n"
 "color:white;\n"
 "}")
 
         self.horizontalLayout.addWidget(self.btn_edit)
 
-        self.btn_del = QPushButton(self.centralwidget)
+        self.btn_del = QPushButton(self.frame)
         self.btn_del.setObjectName(u"btn_del")
         self.btn_del.setStyleSheet(u"QPushButton {\n"
 "font: 10pt \"Arial\";\n"
 "background-color: rgba(0, 153, 255, 100);\n"
+"margin: 5px;\n"
+"padding: 5px;\n"
 "}\n"
 "QPushButton:hover {\n"
+"background-color: rgba(2, 144, 0, 100);\n"
+"color:white;\n"
+"}\n"
+"QPushButton:pressed {\n"
 "background-color: rgba(2, 144, 0, 150);\n"
 "color:white;\n"
 "}")
@@ -70,16 +94,24 @@ class Ui_RefPartsForm(object):
         self.horizontalLayout.addWidget(self.btn_del)
 
 
-        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.verticalLayout.addWidget(self.frame)
 
         self.tableView = QTableView(self.centralwidget)
         self.tableView.setObjectName(u"tableView")
         self.tableView.setStyleSheet(u"QTableView {\n"
-"	background-color: rgba(255, 255, 255, 100)\n"
+" background-color: rgba(255, 255, 255, 30);\n"
+" border: 1px solid rgba(0, 0, 0, 200);\n"
+" color: black;\n"
+" border-radius : 5px;\n"
 "}\n"
 "\n"
 "QTableView::section {\n"
-"background-color: rgba(30, 144, 255, 100)\n"
+" background-color: rgba(30, 144, 255, 100);\n"
+" color: black;\n"
+" font-weight: bold;\n"
+" border: 1px solid rgba(0, 0, 0, 200);\n"
+" height: 40px;\n"
+" border-radius : 5px;\n"
 "}\n"
 "\n"
 "QTableView::item:selected{\n"

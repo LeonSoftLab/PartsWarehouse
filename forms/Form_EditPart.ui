@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditPartForm</class>
+ <widget class="QDialog" name="EditPartForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>536</width>
+    <height>472</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QFrame" name="frame1">
+     <property name="styleSheet">
+      <string notr="true">color: black;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1,0">
+      <item>
+       <widget class="QLabel" name="label_cat">
+        <property name="styleSheet">
+         <string notr="true">background-color: none;
+color: black;
+font-family: &quot;Arial&quot;;
+font-size: 12pt;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string>Категория</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cmb_cat">
+        <property name="styleSheet">
+         <string notr="true">color: black;
+font-family: &quot;Arial&quot;;
+font-size: 12pt;
+margin: 2px;
+padding: 3px;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_edit_cat">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background-color: rgba(207, 0, 3, 100);
+font: 10pt &quot;Arial&quot;;
+margin: 5px;
+padding: 5px;
+}
+QPushButton:hover {
+background-color: rgba(2, 144, 0, 100);
+color:white;
+}
+QPushButton:pressed {
+background-color: rgba(2, 144, 0, 150);
+color:white;
+}</string>
+        </property>
+        <property name="text">
+         <string>Редактировать</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame2">
+     <property name="styleSheet">
+      <string notr="true">color: black;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1,0">
+      <item>
+       <widget class="QLabel" name="label_vendor">
+        <property name="styleSheet">
+         <string notr="true">background-color: none;
+color: black;
+font-family: &quot;Arial&quot;;
+font-size: 12pt;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string>Поставщик</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cmb_vendor">
+        <property name="styleSheet">
+         <string notr="true">color: black;
+font-family: &quot;Arial&quot;;
+font-size: 12pt;
+margin: 2px;
+padding: 3px;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_edit_vendor">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background-color: rgba(207, 0, 3, 100);
+font: 10pt &quot;Arial&quot;;
+margin: 5px;
+padding: 5px;
+}
+QPushButton:hover {
+background-color: rgba(2, 144, 0, 100);
+color:white;
+}
+QPushButton:pressed {
+background-color: rgba(2, 144, 0, 150);
+color:white;
+}</string>
+        </property>
+        <property name="text">
+         <string>Редактировать</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame3">
+     <property name="styleSheet">
+      <string notr="true">color: black;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_name">
+        <property name="styleSheet">
+         <string notr="true">background-color: none;
+color: black;
+font-family: &quot;Arial&quot;;
+font-size: 12pt;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string>Наименование</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_name">
+        <property name="styleSheet">
+         <string notr="true">color: black;
+font-family: &quot;Arial&quot;;
+font-size: 14pt;
+margin: 2px;
+padding: 3px;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame4">
+     <property name="styleSheet">
+      <string notr="true">color: black;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label_notes">
+        <property name="styleSheet">
+         <string notr="true">background-color: none;
+color: black;
+font-family: &quot;Arial&quot;;
+font-size: 12pt;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string>Описание</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="textEdit_notes">
+        <property name="styleSheet">
+         <string notr="true">color: black;
+font-family: &quot;Arial&quot;;
+font-size: 14pt;
+margin: 2px;
+padding: 3px;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btn_save">
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+font: 12pt &quot;Arial&quot;;
+margin: 5px;
+padding: 5px;
+color: black;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;
+}
+QPushButton:hover {
+background-color: rgba(2, 144, 0, 100);
+color:white;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;
+}
+QPushButton:pressed {
+background-color: rgba(2, 144, 0, 150);
+color:white;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Сохранить</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
