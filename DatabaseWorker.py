@@ -96,7 +96,7 @@ class Data:
                                    "  INNER JOIN refCategories rC on rC.id = rP.idCategory "
                                    ).fetchall()
         headers = [column[0] for column in self.cursor.description]
-        model = Utils.CustomTableModel(data, headers)
+        model = Utils.EventsTableModel(data, headers)
 
         return model
 

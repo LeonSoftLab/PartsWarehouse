@@ -16,17 +16,24 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHBoxLayout,
-    QLabel, QLineEdit, QPushButton, QSizePolicy,
-    QVBoxLayout, QWidget)
+    QLabel, QLineEdit, QPlainTextEdit, QPushButton,
+    QSizePolicy, QVBoxLayout, QWidget)
 
 class Ui_AddNameForm(object):
     def setupUi(self, AddNameForm):
         if not AddNameForm.objectName():
             AddNameForm.setObjectName(u"AddNameForm")
-        AddNameForm.resize(420, 144)
-        self.verticalLayout = QVBoxLayout(AddNameForm)
+        AddNameForm.resize(450, 319)
+        self.verticalLayout_2 = QVBoxLayout(AddNameForm)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.frame2 = QFrame(AddNameForm)
+        self.frame2.setObjectName(u"frame2")
+        self.frame2.setStyleSheet(u"color: black;\n"
+"border: 1px solid rgba(0, 0, 0, 200);\n"
+"border-radius : 5px;")
+        self.verticalLayout = QVBoxLayout(self.frame2)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.label_name = QLabel(AddNameForm)
+        self.label_name = QLabel(self.frame2)
         self.label_name.setObjectName(u"label_name")
         font = QFont()
         font.setFamilies([u"Arial"])
@@ -42,7 +49,7 @@ class Ui_AddNameForm(object):
 
         self.verticalLayout.addWidget(self.label_name)
 
-        self.edit_name = QLineEdit(AddNameForm)
+        self.edit_name = QLineEdit(self.frame2)
         self.edit_name.setObjectName(u"edit_name")
         self.edit_name.setStyleSheet(u"color: black;\n"
 "font-family: \"Arial\";\n"
@@ -51,6 +58,21 @@ class Ui_AddNameForm(object):
 "padding: 3px;")
 
         self.verticalLayout.addWidget(self.edit_name)
+
+
+        self.verticalLayout_2.addWidget(self.frame2)
+
+        self.edit_note = QPlainTextEdit(AddNameForm)
+        self.edit_note.setObjectName(u"edit_note")
+        self.edit_note.setStyleSheet(u"color: black;\n"
+"font-family: \"Arial\";\n"
+"font-size: 14pt;\n"
+"margin: 2px;\n"
+"padding: 3px;\n"
+"border: 1px solid rgba(0, 0, 0, 200);\n"
+"border-radius : 5px;")
+
+        self.verticalLayout_2.addWidget(self.edit_note)
 
         self.frame1 = QFrame(AddNameForm)
         self.frame1.setObjectName(u"frame1")
@@ -118,7 +140,7 @@ class Ui_AddNameForm(object):
         self.horizontalLayout.addWidget(self.btn_cancel)
 
 
-        self.verticalLayout.addWidget(self.frame1)
+        self.verticalLayout_2.addWidget(self.frame1)
 
 
         self.retranslateUi(AddNameForm)

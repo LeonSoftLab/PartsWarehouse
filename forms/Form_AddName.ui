@@ -6,44 +6,68 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>420</width>
-    <height>144</height>
+    <width>450</width>
+    <height>319</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <widget class="QLabel" name="label_name">
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>12</pointsize>
-       <italic>true</italic>
-       <bold>true</bold>
-      </font>
-     </property>
+    <widget class="QFrame" name="frame2">
      <property name="styleSheet">
-      <string notr="true">background-color: none;
+      <string notr="true">color: black;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label_name">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <italic>true</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: none;
 color: black;
 font-family: &quot;Arial&quot;;
 font-size: 12pt;
 border: none;</string>
-     </property>
-     <property name="text">
-      <string>Наименование</string>
-     </property>
+        </property>
+        <property name="text">
+         <string>Наименование</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="edit_name">
+        <property name="styleSheet">
+         <string notr="true">color: black;
+font-family: &quot;Arial&quot;;
+font-size: 14pt;
+margin: 2px;
+padding: 3px;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="edit_name">
+    <widget class="QPlainTextEdit" name="edit_note">
      <property name="styleSheet">
       <string notr="true">color: black;
 font-family: &quot;Arial&quot;;
 font-size: 14pt;
 margin: 2px;
-padding: 3px;</string>
+padding: 3px;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;</string>
      </property>
     </widget>
    </item>

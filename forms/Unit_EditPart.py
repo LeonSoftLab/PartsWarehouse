@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QDialog, QMessageBox
 
 from DatabaseWorker import Data
 from forms.Form_EditPart import Ui_EditPartForm
-from forms.Form_AddName import Ui_AddNameForm
+from forms.Unit_AddName import AddNameForm
 
 # Форма добавления/редактирования зап. частей
 class EditPartForm(QDialog):
@@ -49,22 +49,30 @@ class EditPartForm(QDialog):
         self.ui.edit_notes.setPlainText(str(row_data[6]))
 
     def on_click_add_category(self):
-        window_AddName = QDialog()
-        ui_AddName = Ui_AddNameForm()
-        ui_AddName.setupUi(window_AddName)
-        window_AddName.setWindowTitle("Добавление категории")
-        window_AddName.exec()
-        new_category = ui_AddName.edit_name.text()
-        self.conn.add_category_query(new_category, "")
+        sender = self.sender()
+        self.window_AddName = AddNameForm(-1)
+        self.window_AddName.setWindowTitle("Добавление категории")
+        #self.window_AddName.edit_ui_data(row_items)
+        self.window_AddName.setModal(True)
+        self.window_AddName.exec()
+        if self.window_AddName.result == "Ok":
+            new_name = self.window_AddName.ui.edit_name.text()
+            new_note = self.window_AddName.ui.edit_note.toPlainText()
+            self.conn.add_category_query(new_name, new_note)
+            self.load_categories()
 
     def on_click_add_vendor(self):
-        window_AddName = QDialog()
-        ui_AddName = Ui_AddNameForm()
-        ui_AddName.setupUi(window_AddName)
-        window_AddName.setWindowTitle("Добавление поставщика")
-        window_AddName.exec()
-        new_category = ui_AddName.edit_name.text()
-        self.conn.add_vendor_query(new_category, "")
+        sender = self.sender()
+        self.window_AddName = AddNameForm(-1)
+        self.window_AddName.setWindowTitle("Добавление поставщика")
+        #self.window_AddName.edit_ui_data(row_items)
+        self.window_AddName.setModal(True)
+        self.window_AddName.exec()
+        if self.window_AddName.result == "Ok":
+            new_name = self.window_AddName.ui.edit_name.text()
+            new_note = self.window_AddName.ui.edit_note.toPlainText()
+            self.conn.add_vendor_query(new_name, new_note)
+            self.load_vendors()
 
     def on_click_save(self):
         if all(num > -1 for num in [self.ui.cmb_category.currentIndex(),

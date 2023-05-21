@@ -1,4 +1,7 @@
 import sys
+import PySide6
+import sqlite3
+import typing
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 
 from forms.Form_Main import Ui_MainForm
