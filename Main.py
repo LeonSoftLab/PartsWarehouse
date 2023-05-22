@@ -3,6 +3,7 @@ import PySide6
 import sqlite3
 import typing
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtCore import QDate, QTime, QDateTime
 
 from forms.Form_Main import Ui_MainForm
 from forms.Unit_refParts import RefPartsForm
@@ -20,14 +21,23 @@ class MainForm(QMainWindow):
         # Подклюбчение к БД
         self.conn = Data()
 
+        # Настройка контролов
+        self.ui.dte_start_period.setDateTime(
+            QDateTime(QDate.currentDate().year(), QDate.currentDate().month(), 1, 0, 0, 0)
+        )
+        self.ui.dte_end_period.setDate(QDate.currentDate())
+        self.ui.dte_end_period.setTime(QTime(23, 59, 59))
+        self.ui.checkbox_all_period.setChecked(False)
+
         # Загрузка данных из БД
-        self.load_wrkevents()
-        self.load_totals()
-        self.load_categories()
+        self.load_all_data()
+
+        # Загрузка данных в контролы
         self.on_changed_category(self.ui.comboBox_category.currentIndex())
         self.on_changed_parts(self.ui.comboBox_parts.currentIndex())
 
-        # Настройка интерфейса
+        self.ui.btn_update_all_data.clicked.connect(self.load_all_data)
+        self.ui.checkbox_all_period.clicked.connect(self.on_click_all_period)
         self.ui.btn_open_refParts.clicked.connect(self.on_click_open_ref_parts)
         self.ui.btn_add.clicked.connect(self.on_click_edit_event)
         self.ui.btn_edit.clicked.connect(self.on_click_edit_event)
@@ -36,6 +46,13 @@ class MainForm(QMainWindow):
         self.ui.comboBox_category.currentIndexChanged.connect(self.on_changed_category)
         self.ui.comboBox_parts.currentIndexChanged.connect(self.on_changed_parts)
 
+    def on_click_all_period(self):
+        if self.sender().isChecked():
+            self.ui.dte_start_period.close()
+            self.ui.dte_end_period.close()
+        else:
+            self.ui.dte_start_period.show()
+            self.ui.dte_end_period.show()
 
     def on_click_open_ref_parts(self):
         self.window_refParts = RefPartsForm()
@@ -73,6 +90,8 @@ class MainForm(QMainWindow):
             idcat = self.ui.comboBox_category.itemData(index)
             if idcat:
                 self.load_category_detail(idcat)
+        else:
+            self.load_category_detail(-1)
         self.load_parts(index)
 
     def on_changed_parts(self, index):
@@ -80,6 +99,8 @@ class MainForm(QMainWindow):
             idpart = self.ui.comboBox_parts.itemData(index)
             if idpart:
                 self.load_part_detail(idpart)
+        else:
+            self.load_part_detail(-1)
 
     def load_wrkevents(self):
         model = self.conn.get_table_wrkevents()
@@ -110,6 +131,17 @@ class MainForm(QMainWindow):
                 parts = self.conn.get_parts(int(idcat))
                 for part in parts:
                     self.ui.comboBox_parts.addItem(part[1], part[0])
+
+    def load_all_data(self):
+        if not self.ui.checkbox_all_period.isChecked():
+            start = self.ui.dte_start_period.dateTime().toString('yyyy-MM-dd hh:mm:ss')
+            end = self.ui.dte_end_period.dateTime().toString('yyyy-MM-dd hh:mm:ss')
+            self.conn.period.update({'start': start, 'end': end})
+        else:
+            self.conn.period.update({'start': '', 'end': ''})
+        self.load_wrkevents()
+        self.load_categories()
+        self.load_totals()
 
     def load_category_detail(self, id):
         self.ui.data_in_category.setText(self.conn.income_by_category(id))

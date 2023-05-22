@@ -16,14 +16,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QFrame,
-    QHBoxLayout, QLabel, QLineEdit, QPushButton,
-    QSizePolicy, QTextEdit, QVBoxLayout, QWidget)
+    QHBoxLayout, QLabel, QLineEdit, QPlainTextEdit,
+    QPushButton, QSizePolicy, QVBoxLayout, QWidget)
 
 class Ui_EditPartForm(object):
     def setupUi(self, EditPartForm):
         if not EditPartForm.objectName():
             EditPartForm.setObjectName(u"EditPartForm")
-        EditPartForm.resize(536, 472)
+        EditPartForm.resize(587, 489)
         self.verticalLayout_2 = QVBoxLayout(EditPartForm)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.frame1 = QFrame(EditPartForm)
@@ -56,8 +56,8 @@ class Ui_EditPartForm(object):
         self.btn_add_category = QPushButton(self.frame1)
         self.btn_add_category.setObjectName(u"btn_add_category")
         self.btn_add_category.setStyleSheet(u"QPushButton {\n"
-"background-color: rgba(207, 0, 3, 100);\n"
 "font: 10pt \"Arial\";\n"
+"background-color: rgba(0, 153, 255, 100);\n"
 "margin: 5px;\n"
 "padding: 5px;\n"
 "}\n"
@@ -71,6 +71,26 @@ class Ui_EditPartForm(object):
 "}")
 
         self.horizontalLayout.addWidget(self.btn_add_category)
+
+        self.btn_delete_category = QPushButton(self.frame1)
+        self.btn_delete_category.setObjectName(u"btn_delete_category")
+        self.btn_delete_category.setStyleSheet(u"QPushButton {\n"
+"font: 10pt \"Arial\";\n"
+"background-color: rgba(0, 153, 255, 100);\n"
+"border-style: dotted;\n"
+"margin: 5px;\n"
+"padding: 2px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"background-color: rgba(207, 0, 3, 100);\n"
+"color:white;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgba(207, 0, 3, 150);\n"
+"color:white;\n"
+"}")
+
+        self.horizontalLayout.addWidget(self.btn_delete_category)
 
         self.horizontalLayout.setStretch(1, 1)
 
@@ -106,8 +126,8 @@ class Ui_EditPartForm(object):
         self.btn_add_vendor = QPushButton(self.frame2)
         self.btn_add_vendor.setObjectName(u"btn_add_vendor")
         self.btn_add_vendor.setStyleSheet(u"QPushButton {\n"
-"background-color: rgba(207, 0, 3, 100);\n"
 "font: 10pt \"Arial\";\n"
+"background-color: rgba(0, 153, 255, 100);\n"
 "margin: 5px;\n"
 "padding: 5px;\n"
 "}\n"
@@ -121,6 +141,26 @@ class Ui_EditPartForm(object):
 "}")
 
         self.horizontalLayout_2.addWidget(self.btn_add_vendor)
+
+        self.btn_delete_vendor = QPushButton(self.frame2)
+        self.btn_delete_vendor.setObjectName(u"btn_delete_vendor")
+        self.btn_delete_vendor.setStyleSheet(u"QPushButton {\n"
+"font: 10pt \"Arial\";\n"
+"background-color: rgba(0, 153, 255, 100);\n"
+"border-style: dotted;\n"
+"margin: 5px;\n"
+"padding: 2px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"background-color: rgba(207, 0, 3, 100);\n"
+"color:white;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgba(207, 0, 3, 150);\n"
+"color:white;\n"
+"}")
+
+        self.horizontalLayout_2.addWidget(self.btn_delete_vendor)
 
         self.horizontalLayout_2.setStretch(1, 1)
 
@@ -173,7 +213,7 @@ class Ui_EditPartForm(object):
 
         self.verticalLayout.addWidget(self.label_notes)
 
-        self.edit_notes = QTextEdit(self.frame4)
+        self.edit_notes = QPlainTextEdit(self.frame4)
         self.edit_notes.setObjectName(u"edit_notes")
         self.edit_notes.setStyleSheet(u"color: black;\n"
 "font-family: \"Arial\";\n"
@@ -221,8 +261,10 @@ class Ui_EditPartForm(object):
         EditPartForm.setWindowTitle(QCoreApplication.translate("EditPartForm", u"Dialog", None))
         self.label_category.setText(QCoreApplication.translate("EditPartForm", u"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f", None))
         self.btn_add_category.setText(QCoreApplication.translate("EditPartForm", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c", None))
+        self.btn_delete_category.setText(QCoreApplication.translate("EditPartForm", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))
         self.label_vendor.setText(QCoreApplication.translate("EditPartForm", u"\u041f\u043e\u0441\u0442\u0430\u0432\u0449\u0438\u043a", None))
         self.btn_add_vendor.setText(QCoreApplication.translate("EditPartForm", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c", None))
+        self.btn_delete_vendor.setText(QCoreApplication.translate("EditPartForm", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))
         self.label_name.setText(QCoreApplication.translate("EditPartForm", u"\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435", None))
         self.label_notes.setText(QCoreApplication.translate("EditPartForm", u"\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435", None))
         self.btn_save.setText(QCoreApplication.translate("EditPartForm", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c", None))

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>950</width>
-    <height>700</height>
+    <width>914</width>
+    <height>741</height>
    </rect>
   </property>
   <property name="font">
@@ -23,26 +23,145 @@
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_6">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QFrame" name="frame_top">
+     <widget class="QFrame" name="frame_top_2">
       <property name="styleSheet">
        <string notr="true">color: black;
 border: 1px solid rgba(0, 0, 0, 200);
 border-radius : 5px;</string>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="0,1">
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
        <item>
-        <widget class="QFrame" name="frame_left">
+        <widget class="QLabel" name="label_work_period">
+         <property name="styleSheet">
+          <string notr="true">background-color: none;
+color: black;
+font-family: &quot;Arial&quot;;
+font-size: 12pt;
+border: none;</string>
+         </property>
+         <property name="text">
+          <string>Рабочий период:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDateTimeEdit" name="dte_start_period">
+         <property name="styleSheet">
+          <string notr="true">color: black;
+font-family: &quot;Arial&quot;;
+font-size: 12pt;
+margin: 2px;
+padding: 3px;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDateTimeEdit" name="dte_end_period">
+         <property name="styleSheet">
+          <string notr="true">color: black;
+font-family: &quot;Arial&quot;;
+font-size: 12pt;
+margin: 2px;
+padding: 3px;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkbox_all_period">
+         <property name="styleSheet">
+          <string notr="true">background-color: none;
+color: black;
+font-family: &quot;Arial&quot;;
+font-size: 12pt;
+border: none;</string>
+         </property>
+         <property name="text">
+          <string>Весь период</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_update_all_data">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+background-color: rgba(207, 0, 3, 100);
+font: 10pt &quot;Arial&quot;;
+margin: 5px;
+padding: 5px;
+}
+QPushButton:hover {
+background-color: rgba(2, 144, 0, 100);
+color:white;
+}
+QPushButton:pressed {
+background-color: rgba(2, 144, 0, 150);
+color:white;
+}</string>
+         </property>
+         <property name="text">
+          <string>Обновить</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_middle_2">
+      <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="0,1">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="frame_middle_left">
          <property name="minimumSize">
           <size>
            <width>230</width>
            <height>0</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: black;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;
+padding: 0px;
+margin: 0px;</string>
+         </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>5</number>
+          </property>
+          <property name="leftMargin">
+           <number>5</number>
+          </property>
+          <property name="topMargin">
+           <number>5</number>
+          </property>
+          <property name="rightMargin">
+           <number>5</number>
+          </property>
+          <property name="bottomMargin">
+           <number>5</number>
+          </property>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <property name="spacing">
+             <number>6</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_count_all">
               <property name="styleSheet">
@@ -165,228 +284,372 @@ border: none;</string>
         </widget>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_5">
-         <item>
-          <widget class="QFrame" name="frame_right1">
-           <layout class="QHBoxLayout" name="horizontalLayout_6">
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_3">
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_4">
-                <item>
-                 <widget class="QLabel" name="label_exp_category">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: none;
+        <widget class="QFrame" name="frame_middle_right">
+         <layout class="QVBoxLayout" name="verticalLayout_5" stretch="0,0">
+          <property name="spacing">
+           <number>5</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="frame_right1">
+            <property name="styleSheet">
+             <string notr="true">color: black;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0,1">
+             <property name="spacing">
+              <number>5</number>
+             </property>
+             <property name="leftMargin">
+              <number>5</number>
+             </property>
+             <property name="topMargin">
+              <number>5</number>
+             </property>
+             <property name="rightMargin">
+              <number>5</number>
+             </property>
+             <property name="bottomMargin">
+              <number>5</number>
+             </property>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0">
+               <property name="spacing">
+                <number>5</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,1">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>2</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_exp_category">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: none;
 color: black;
 font-family: &quot;Arial&quot;;
 font-size: 12pt;
 border: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>Расходы по категории</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="data_exp_category">
-                  <property name="font">
-                   <font>
-                    <family>Arial</family>
-                    <pointsize>12</pointsize>
-                    <bold>true</bold>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: none;
+                   </property>
+                   <property name="text">
+                    <string>Расходы по категории</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="data_exp_category">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Arial</family>
+                     <pointsize>12</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: none;
 color: red;
 font-weight: bold;
 font-family: &quot;Arial&quot;;
 font-size: 12pt;
 border: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_5">
-                <item>
-                 <widget class="QLabel" name="label_in_category">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: none;
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>2</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_in_category">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: none;
 color: black;
 font-family: &quot;Arial&quot;;
 font-size: 12pt;
 border: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>Приходы по категории</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="data_in_category">
-                  <property name="font">
-                   <font>
-                    <family>Arial</family>
-                    <pointsize>12</pointsize>
-                    <bold>true</bold>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: none;
+                   </property>
+                   <property name="text">
+                    <string>Приходы по категории</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="data_in_category">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Arial</family>
+                     <pointsize>12</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: none;
 color: green;
 font-weight: bold;
 font-family: &quot;Arial&quot;;
 font-size: 12pt;
 border: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <widget class="QComboBox" name="comboBox_category">
-              <property name="minimumSize">
-               <size>
-                <width>350</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: black;
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_category">
+               <property name="minimumSize">
+                <size>
+                 <width>350</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: black;
 font-family: &quot;Arial&quot;;
 font-size: 12pt;
 margin: 2px;
 padding: 3px;</string>
-              </property>
-              <property name="placeholderText">
-               <string>Выберите категорию</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QFrame" name="frame_right2">
-           <layout class="QHBoxLayout" name="horizontalLayout_9">
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_4">
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_8">
-                <item>
-                 <widget class="QLabel" name="label_exp_parts">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: none;
+               </property>
+               <property name="placeholderText">
+                <string>Выберите категорию</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_right2">
+            <property name="styleSheet">
+             <string notr="true">color: black;
+border: 1px solid rgba(0, 0, 0, 200);
+border-radius : 5px;</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="0,1">
+             <property name="spacing">
+              <number>5</number>
+             </property>
+             <property name="leftMargin">
+              <number>5</number>
+             </property>
+             <property name="topMargin">
+              <number>5</number>
+             </property>
+             <property name="rightMargin">
+              <number>5</number>
+             </property>
+             <property name="bottomMargin">
+              <number>5</number>
+             </property>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>2</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_exp_parts">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: none;
 color: black;
 font-family: &quot;Arial&quot;;
 font-size: 12pt;
 border: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>Расходы по товару</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="data_exp_parts">
-                  <property name="font">
-                   <font>
-                    <family>Arial</family>
-                    <pointsize>12</pointsize>
-                    <bold>true</bold>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: none;
+                   </property>
+                   <property name="text">
+                    <string>Расходы по товару</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="data_exp_parts">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Arial</family>
+                     <pointsize>12</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: none;
 color: red;
 font-weight: bold;
 font-family: &quot;Arial&quot;;
 font-size: 12pt;
 border: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_7">
-                <item>
-                 <widget class="QLabel" name="label_in_parts">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: none;
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>2</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_in_parts">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: none;
 color: black;
 font-family: &quot;Arial&quot;;
 font-size: 12pt;
 border: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>Приходы по товару</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="data_in_parts">
-                  <property name="font">
-                   <font>
-                    <family>Arial</family>
-                    <pointsize>12</pointsize>
-                    <bold>true</bold>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: none;
+                   </property>
+                   <property name="text">
+                    <string>Приходы по товару</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="data_in_parts">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Arial</family>
+                     <pointsize>12</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: none;
 color: green;
 font-weight: bold;
 font-family: &quot;Arial&quot;;
 font-size: 12pt;
 border: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <widget class="QComboBox" name="comboBox_parts">
-              <property name="minimumSize">
-               <size>
-                <width>350</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: black;
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_parts">
+               <property name="minimumSize">
+                <size>
+                 <width>350</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: black;
 font-family: &quot;Arial&quot;;
 font-size: 12pt;
 margin: 2px;
 padding: 3px;</string>
-              </property>
-              <property name="placeholderText">
-               <string>Выберите зап. часть</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
+               </property>
+               <property name="placeholderText">
+                <string>Выберите зап. часть</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -472,15 +735,16 @@ color:white;
           <string notr="true">QPushButton {
 font: 10pt &quot;Arial&quot;;
 background-color: rgba(0, 153, 255, 100);
+border-style: dotted;
 margin: 5px;
-padding: 5px;
+padding: 2px;
 }
 QPushButton:hover {
-background-color: rgba(2, 144, 0, 100);
+background-color: rgba(207, 0, 3, 100);
 color:white;
 }
 QPushButton:pressed {
-background-color: rgba(2, 144, 0, 150);
+background-color: rgba(207, 0, 3, 150);
 color:white;
 }</string>
          </property>

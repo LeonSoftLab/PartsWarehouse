@@ -130,13 +130,13 @@ border: 1px solid rgba(0, 0, 0, 200);
 border-radius : 5px;
 }
 QPushButton:hover {
-background-color: rgba(2, 144, 0, 100);
+background-color: rgba(207, 0, 3, 100);
 color:white;
 border: 1px solid rgba(0, 0, 0, 200);
 border-radius : 5px;
 }
 QPushButton:pressed {
-background-color: rgba(2, 144, 0, 150);
+background-color: rgba(207, 0, 3, 150);
 color:white;
 border: 1px solid rgba(0, 0, 0, 200);
 border-radius : 5px;

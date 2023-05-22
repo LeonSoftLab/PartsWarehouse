@@ -19,7 +19,7 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QFrame" name="">
+     <widget class="QFrame" name="frame">
       <property name="styleSheet">
        <string notr="true">color: black;
 border: 1px solid rgba(0, 0, 0, 200);
@@ -78,15 +78,16 @@ color:white;
           <string notr="true">QPushButton {
 font: 10pt &quot;Arial&quot;;
 background-color: rgba(0, 153, 255, 100);
+border-style: dotted;
 margin: 5px;
-padding: 5px;
+padding: 2px;
 }
 QPushButton:hover {
-background-color: rgba(2, 144, 0, 100);
+background-color: rgba(207, 0, 3, 100);
 color:white;
 }
 QPushButton:pressed {
-background-color: rgba(2, 144, 0, 150);
+background-color: rgba(207, 0, 3, 150);
 color:white;
 }</string>
          </property>

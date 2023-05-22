@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>536</width>
-    <height>472</height>
+    <width>587</width>
+    <height>489</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
 border: 1px solid rgba(0, 0, 0, 200);
 border-radius : 5px;</string>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1,0">
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1,0,0">
       <item>
        <widget class="QLabel" name="label_category">
         <property name="styleSheet">
@@ -51,8 +51,8 @@ padding: 3px;</string>
        <widget class="QPushButton" name="btn_add_category">
         <property name="styleSheet">
          <string notr="true">QPushButton {
-background-color: rgba(207, 0, 3, 100);
 font: 10pt &quot;Arial&quot;;
+background-color: rgba(0, 153, 255, 100);
 margin: 5px;
 padding: 5px;
 }
@@ -70,6 +70,30 @@ color:white;
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="btn_delete_category">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+font: 10pt &quot;Arial&quot;;
+background-color: rgba(0, 153, 255, 100);
+border-style: dotted;
+margin: 5px;
+padding: 2px;
+}
+QPushButton:hover {
+background-color: rgba(207, 0, 3, 100);
+color:white;
+}
+QPushButton:pressed {
+background-color: rgba(207, 0, 3, 150);
+color:white;
+}</string>
+        </property>
+        <property name="text">
+         <string>Удалить</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>
@@ -80,7 +104,7 @@ color:white;
 border: 1px solid rgba(0, 0, 0, 200);
 border-radius : 5px;</string>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1,0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1,0,0">
       <item>
        <widget class="QLabel" name="label_vendor">
         <property name="styleSheet">
@@ -110,8 +134,8 @@ padding: 3px;</string>
        <widget class="QPushButton" name="btn_add_vendor">
         <property name="styleSheet">
          <string notr="true">QPushButton {
-background-color: rgba(207, 0, 3, 100);
 font: 10pt &quot;Arial&quot;;
+background-color: rgba(0, 153, 255, 100);
 margin: 5px;
 padding: 5px;
 }
@@ -126,6 +150,30 @@ color:white;
         </property>
         <property name="text">
          <string>Добавить</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_delete_vendor">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+font: 10pt &quot;Arial&quot;;
+background-color: rgba(0, 153, 255, 100);
+border-style: dotted;
+margin: 5px;
+padding: 2px;
+}
+QPushButton:hover {
+background-color: rgba(207, 0, 3, 100);
+color:white;
+}
+QPushButton:pressed {
+background-color: rgba(207, 0, 3, 150);
+color:white;
+}</string>
+        </property>
+        <property name="text">
+         <string>Удалить</string>
         </property>
        </widget>
       </item>
@@ -191,7 +239,7 @@ border: none;</string>
        </widget>
       </item>
       <item>
-       <widget class="QTextEdit" name="edit_notes">
+       <widget class="QPlainTextEdit" name="edit_notes">
         <property name="styleSheet">
          <string notr="true">color: black;
 font-family: &quot;Arial&quot;;

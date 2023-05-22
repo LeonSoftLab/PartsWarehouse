@@ -8,6 +8,7 @@ import Utils
 class Data:
     def __init__(self):
         super(Data, self).__init__()
+        self.period = {'start': '', 'end': ''}
         # Получение данных из базы SQLite
         try:
             self.connection = sqlite3.connect('db\database.db')
@@ -58,11 +59,15 @@ class Data:
         self.connection.commit()
 
     def get_total(self, column, filter=None, value=None):
-        sql_query = f"SELECT SUM(wrk.{column}) FROM wrkEvents wrk "
-        sql_query += " INNER JOIN refParts rP on rP.id = wrk.idPart "
+        sql_query = f"SELECT SUM(case when wrk.Type = 'Приход' then wrk.{column} else -wrk.{column} end) as [qty] " \
+                    f" FROM wrkEvents wrk " \
+                    f" INNER JOIN refParts rP on rP.id = wrk.idPart " \
+                    f" WHERE 1=1 "
+        if self.period['start'] != '' and self.period['end'] != '':
+            sql_query += f" AND wrk.DateTime BETWEEN '{self.period['start']}' and '{self.period['end']}' "
         if filter is not None and value is not None:
-            sql_query += f" WHERE {filter} = ?"
-            query = self.cursor.execute(sql_query, (value,)).fetchone()
+            sql_query += f" AND {filter} = ?"
+            query = self.cursor.execute(sql_query, (value, )).fetchone()
         else:
             query = self.cursor.execute(sql_query).fetchone()
 
@@ -72,9 +77,12 @@ class Data:
         return '0'
 
     def get_total_by_partcat(self, column, filtr, valuefiltr, valuetype):
-        sql_query = f"SELECT SUM(wrk.{column}) FROM wrkEvents wrk "
-        sql_query += " INNER JOIN refParts rP on rP.id = wrk.idPart "
-        sql_query += f" WHERE {filtr} = ? AND Type = ? "
+        sql_query = f"SELECT SUM(case when wrk.Type = 'Приход' then wrk.{column} else -wrk.{column} end) as [qty] " \
+                    f" FROM wrkEvents wrk " \
+                    f" INNER JOIN refParts rP on rP.id = wrk.idPart " \
+                    f" WHERE {filtr} = ? AND Type = ? "
+        if self.period['start'] != '' and self.period['end'] != '':
+            sql_query += f" AND wrk.DateTime BETWEEN '{self.period['start']}' and '{self.period['end']}' "
         query = self.cursor.execute(sql_query, (valuefiltr, valuetype)).fetchone()
         if query is not None:
             return str(query[0])
@@ -82,19 +90,21 @@ class Data:
         return '0'
 
     def get_table_wrkevents(self):
-        data = self.cursor.execute("SELECT "
-                                   "   wrk.id as 'Код записи', "
-                                   "   wrk.Type as 'Тип события', "
-                                   "   rP.idCategory as 'Код категории', "
-                                   "   rC.Name as 'Категория зап. части', "
-                                   "   wrk.idPart as 'Код зап. части', "
-                                   "   rP.Name as 'Наименование зап части', "
-                                   "   wrk.DateTime as 'Дата/время события', "
-                                   "   wrk.Qty as 'Количество' "
-                                   "FROM wrkEvents wrk "
-                                   "  INNER JOIN refParts rP on rP.id = wrk.idPart "
-                                   "  INNER JOIN refCategories rC on rC.id = rP.idCategory "
-                                   ).fetchall()
+        sql_query = """ SELECT 
+                       wrk.id as 'Код записи', 
+                       wrk.Type as 'Тип события', 
+                       rP.idCategory as 'Код категории',
+                       rC.Name as 'Категория зап. части',
+                       wrk.idPart as 'Код зап. части',
+                       rP.Name as 'Наименование зап части',
+                       wrk.DateTime as 'Дата/время события',
+                       wrk.Qty as 'Количество'
+                    FROM wrkEvents wrk
+                      INNER JOIN refParts rP on rP.id = wrk.idPart
+                      INNER JOIN refCategories rC on rC.id = rP.idCategory """
+        if self.period['start'] != '' and self.period['end'] != '':
+            sql_query += f" WHERE wrk.DateTime BETWEEN '{self.period['start']}' and '{self.period['end']}' "
+        data = self.cursor.execute(sql_query).fetchall()
         headers = [column[0] for column in self.cursor.description]
         model = Utils.EventsTableModel(data, headers)
 
@@ -152,13 +162,25 @@ class Data:
         return self.get_total(column="Qty", filter="Type", value="Расход")
 
     def income_by_category(self, idcat):
-        return self.get_total_by_partcat(column="Qty", filtr="idCategory", valuefiltr=idcat, valuetype="Приход")
+        if idcat > -1:
+            return self.get_total_by_partcat(column="Qty", filtr="idCategory", valuefiltr=idcat, valuetype="Приход")
+        else:
+            return None
 
     def outcome_by_category(self, idcat):
-        return self.get_total_by_partcat(column="Qty", filtr="idCategory", valuefiltr=idcat, valuetype="Расход")
+        if idcat > -1:
+            return self.get_total_by_partcat(column="Qty", filtr="idCategory", valuefiltr=idcat, valuetype="Расход")
+        else:
+            return None
 
     def income_by_part(self, idpart):
-        return self.get_total_by_partcat(column="Qty", filtr="idPart", valuefiltr=idpart, valuetype="Приход")
+        if idpart > -1:
+            return self.get_total_by_partcat(column="Qty", filtr="idPart", valuefiltr=idpart, valuetype="Приход")
+        else:
+            return None
 
     def outcome_by_part(self, idpart):
-        return self.get_total_by_partcat(column="Qty", filtr="idPart", valuefiltr=idpart, valuetype="Расход")
+        if idpart > -1:
+            return self.get_total_by_partcat(column="Qty", filtr="idPart", valuefiltr=idpart, valuetype="Расход")
+        else:
+            return None
