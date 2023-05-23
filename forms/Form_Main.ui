@@ -454,7 +454,7 @@ border: none;</string>
               </layout>
              </item>
              <item>
-              <widget class="QComboBox" name="comboBox_category">
+              <widget class="QComboBox" name="cmb_category">
                <property name="minimumSize">
                 <size>
                  <width>350</width>
@@ -626,7 +626,7 @@ border: none;</string>
               </layout>
              </item>
              <item>
-              <widget class="QComboBox" name="comboBox_parts">
+              <widget class="QComboBox" name="cmb_parts">
                <property name="minimumSize">
                 <size>
                  <width>350</width>

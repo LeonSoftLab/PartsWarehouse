@@ -74,6 +74,28 @@ class EditPartForm(QDialog):
             self.conn.add_vendor_query(new_name, new_note)
             self.load_vendors()
 
+    def on_click_delete_category(self):
+        result = QMessageBox.warning(self, "Удаление категории", "Внимание! Вы уверены что хотите удалить запись?",
+                                     QMessageBox.StandardButton.Ok, QMessageBox.StandardButton.Cancel)
+        if result == QMessageBox.StandardButton.Ok:
+            cmb_index = self.ui.cmb_category.currentIndex()
+            if cmb_index > -1:
+                id_cat = self.ui.cmb_category.itemData(cmb_index)
+                if id_cat:
+                    self.conn.delete_category_query(int(id_cat))
+            self.load_categories()
+
+    def on_click_delete_vendor(self):
+        result = QMessageBox.warning(self, "Удаление поставщика", "Внимание! Вы уверены что хотите удалить запись?",
+                                     QMessageBox.StandardButton.Ok, QMessageBox.StandardButton.Cancel)
+        if result == QMessageBox.StandardButton.Ok:
+            cmb_index = self.ui.cmb_vendor.currentIndex()
+            if cmb_index > -1:
+                id_cat = self.ui.cmb_vendor.itemData(cmb_index)
+                if id_cat:
+                    self.conn.delete_vendor_query(int(id_cat))
+            self.load_vendors()
+
     def on_click_save(self):
         if all(num > -1 for num in [self.ui.cmb_category.currentIndex(),
                                     self.ui.cmb_vendor.currentIndex()]

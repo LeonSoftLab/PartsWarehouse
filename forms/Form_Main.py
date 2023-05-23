@@ -296,16 +296,16 @@ class Ui_MainForm(object):
 
         self.horizontalLayout_6.addLayout(self.verticalLayout_3)
 
-        self.comboBox_category = QComboBox(self.frame_right1)
-        self.comboBox_category.setObjectName(u"comboBox_category")
-        self.comboBox_category.setMinimumSize(QSize(350, 0))
-        self.comboBox_category.setStyleSheet(u"color: black;\n"
+        self.cmb_category = QComboBox(self.frame_right1)
+        self.cmb_category.setObjectName(u"cmb_category")
+        self.cmb_category.setMinimumSize(QSize(350, 0))
+        self.cmb_category.setStyleSheet(u"color: black;\n"
 "font-family: \"Arial\";\n"
 "font-size: 12pt;\n"
 "margin: 2px;\n"
 "padding: 3px;")
 
-        self.horizontalLayout_6.addWidget(self.comboBox_category)
+        self.horizontalLayout_6.addWidget(self.cmb_category)
 
         self.horizontalLayout_6.setStretch(1, 1)
 
@@ -385,16 +385,16 @@ class Ui_MainForm(object):
 
         self.horizontalLayout_9.addLayout(self.verticalLayout_4)
 
-        self.comboBox_parts = QComboBox(self.frame_right2)
-        self.comboBox_parts.setObjectName(u"comboBox_parts")
-        self.comboBox_parts.setMinimumSize(QSize(350, 0))
-        self.comboBox_parts.setStyleSheet(u"color: black;\n"
+        self.cmb_parts = QComboBox(self.frame_right2)
+        self.cmb_parts.setObjectName(u"cmb_parts")
+        self.cmb_parts.setMinimumSize(QSize(350, 0))
+        self.cmb_parts.setStyleSheet(u"color: black;\n"
 "font-family: \"Arial\";\n"
 "font-size: 12pt;\n"
 "margin: 2px;\n"
 "padding: 3px;")
 
-        self.horizontalLayout_9.addWidget(self.comboBox_parts)
+        self.horizontalLayout_9.addWidget(self.cmb_parts)
 
         self.horizontalLayout_9.setStretch(1, 1)
 
@@ -563,12 +563,12 @@ class Ui_MainForm(object):
         self.data_exp_category.setText(QCoreApplication.translate("MainForm", u"0", None))
         self.label_in_category.setText(QCoreApplication.translate("MainForm", u"\u041f\u0440\u0438\u0445\u043e\u0434\u044b \u043f\u043e \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438", None))
         self.data_in_category.setText(QCoreApplication.translate("MainForm", u"0", None))
-        self.comboBox_category.setPlaceholderText(QCoreApplication.translate("MainForm", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044e", None))
+        self.cmb_category.setPlaceholderText(QCoreApplication.translate("MainForm", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044e", None))
         self.label_exp_parts.setText(QCoreApplication.translate("MainForm", u"\u0420\u0430\u0441\u0445\u043e\u0434\u044b \u043f\u043e \u0442\u043e\u0432\u0430\u0440\u0443", None))
         self.data_exp_parts.setText(QCoreApplication.translate("MainForm", u"0", None))
         self.label_in_parts.setText(QCoreApplication.translate("MainForm", u"\u041f\u0440\u0438\u0445\u043e\u0434\u044b \u043f\u043e \u0442\u043e\u0432\u0430\u0440\u0443", None))
         self.data_in_parts.setText(QCoreApplication.translate("MainForm", u"0", None))
-        self.comboBox_parts.setPlaceholderText(QCoreApplication.translate("MainForm", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0437\u0430\u043f. \u0447\u0430\u0441\u0442\u044c", None))
+        self.cmb_parts.setPlaceholderText(QCoreApplication.translate("MainForm", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0437\u0430\u043f. \u0447\u0430\u0441\u0442\u044c", None))
         self.btn_add.setText(QCoreApplication.translate("MainForm", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c", None))
         self.btn_edit.setText(QCoreApplication.translate("MainForm", u"\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
         self.btn_delete.setText(QCoreApplication.translate("MainForm", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))

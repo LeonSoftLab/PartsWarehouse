@@ -35,7 +35,7 @@ class RefPartsForm(QMainWindow):
         self.window_EditPart.exec()
 
     def on_click_delete_part(self):
-        result = QMessageBox.warning(self, "Справочник зап. частей", "Внимание! Вы уверены что хотите удалить запись?",
+        result = QMessageBox.warning(self, "Удаление зап. части", "Внимание! Вы уверены что хотите удалить запись?",
                                      QMessageBox.StandardButton.Ok, QMessageBox.StandardButton.Cancel)
         if result == QMessageBox.StandardButton.Ok:
             index_row = self.ui.tableView.currentIndex().row()

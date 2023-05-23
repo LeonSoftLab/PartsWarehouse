@@ -33,8 +33,8 @@ class MainForm(QMainWindow):
         self.load_all_data()
 
         # Загрузка данных в контролы
-        self.on_changed_category(self.ui.comboBox_category.currentIndex())
-        self.on_changed_parts(self.ui.comboBox_parts.currentIndex())
+        self.on_changed_category(self.ui.cmb_category.currentIndex())
+        self.on_changed_parts(self.ui.cmb_parts.currentIndex())
 
         self.ui.btn_update_all_data.clicked.connect(self.load_all_data)
         self.ui.checkbox_all_period.clicked.connect(self.on_click_all_period)
@@ -43,8 +43,8 @@ class MainForm(QMainWindow):
         self.ui.btn_edit.clicked.connect(self.on_click_edit_event)
         self.ui.btn_delete.clicked.connect(self.on_click_delete_event)
 
-        self.ui.comboBox_category.currentIndexChanged.connect(self.on_changed_category)
-        self.ui.comboBox_parts.currentIndexChanged.connect(self.on_changed_parts)
+        self.ui.cmb_category.currentIndexChanged.connect(self.on_changed_category)
+        self.ui.cmb_parts.currentIndexChanged.connect(self.on_changed_parts)
 
     def on_click_all_period(self):
         if self.sender().isChecked():
@@ -76,7 +76,7 @@ class MainForm(QMainWindow):
         self.window_EditEvent.exec()
 
     def on_click_delete_event(self):
-        result = QMessageBox.warning(self, "Движения по складу", "Внимание! Вы уверены что хотите удалить запись?",
+        result = QMessageBox.warning(self, "Удаление записи", "Внимание! Вы уверены что хотите удалить запись?",
                                      QMessageBox.StandardButton.Ok, QMessageBox.StandardButton.Cancel)
         if result == QMessageBox.StandardButton.Ok:
             index_row = self.ui.tableView.currentIndex().row()
@@ -87,16 +87,16 @@ class MainForm(QMainWindow):
 
     def on_changed_category(self, index):
         if index > -1:
-            idcat = self.ui.comboBox_category.itemData(index)
-            if idcat:
-                self.load_category_detail(idcat)
+            id_cat = self.ui.cmb_category.itemData(index)
+            if id_cat:
+                self.load_category_detail(id_cat)
         else:
             self.load_category_detail(-1)
         self.load_parts(index)
 
     def on_changed_parts(self, index):
         if index > -1:
-            idpart = self.ui.comboBox_parts.itemData(index)
+            idpart = self.ui.cmb_parts.itemData(index)
             if idpart:
                 self.load_part_detail(idpart)
         else:
@@ -118,19 +118,19 @@ class MainForm(QMainWindow):
         self.ui.data_count_exp.setText(self.conn.total_outcome())
 
     def load_categories(self):
-        self.ui.comboBox_category.clear()
+        self.ui.cmb_category.clear()
         categories = self.conn.get_categories()
         for category in categories:
-            self.ui.comboBox_category.addItem(category[1], category[0])
+            self.ui.cmb_category.addItem(category[1], category[0])
 
     def load_parts(self, index):
-        self.ui.comboBox_parts.clear()
+        self.ui.cmb_parts.clear()
         if index > -1:
-            idcat = self.ui.comboBox_category.itemData(index)
+            idcat = self.ui.cmb_category.itemData(index)
             if idcat:
                 parts = self.conn.get_parts(int(idcat))
                 for part in parts:
-                    self.ui.comboBox_parts.addItem(part[1], part[0])
+                    self.ui.cmb_parts.addItem(part[1], part[0])
 
     def load_all_data(self):
         if not self.ui.checkbox_all_period.isChecked():

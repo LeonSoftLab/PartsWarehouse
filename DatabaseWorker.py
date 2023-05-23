@@ -53,9 +53,19 @@ class Data:
                             (name, notes))
         self.connection.commit()
 
+    def delete_category_query(self, id):
+        self.cursor.execute("DELETE FROM refCategories WHERE id=?",
+                            (id,))
+        self.connection.commit()
+
     def add_vendor_query(self, name, notes):
         self.cursor.execute("INSERT INTO refVendors (Name, Notes) VALUES (?, ?)",
                             (name, notes))
+        self.connection.commit()
+
+    def delete_vendor_query(self, id):
+        self.cursor.execute("DELETE FROM refVendors WHERE id=?",
+                            (id,))
         self.connection.commit()
 
     def get_total(self, column, filter=None, value=None):
