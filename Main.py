@@ -2,7 +2,8 @@ import sys
 import PySide6
 import sqlite3
 import typing
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QCompleter
+from PySide6 import QtCore
 from PySide6.QtCore import QDate, QTime, QDateTime
 
 from forms.Form_Main import Ui_MainForm
@@ -109,8 +110,6 @@ class MainForm(QMainWindow):
         self.ui.tableView.setAlternatingRowColors(True)
         # Настраиваем ширину колонок под содержимое
         self.ui.tableView.resizeColumnsToContents()
-        #delegate = Utils.CustomDelegate()
-        #self.ui.tableView.setItemDelegate(delegate)
 
     def load_totals(self):
         self.ui.data_count_all.setText(self.conn.total_balance())
@@ -122,6 +121,9 @@ class MainForm(QMainWindow):
         categories = self.conn.get_categories()
         for category in categories:
             self.ui.cmb_category.addItem(category[1], category[0])
+        completer = QCompleter([item[1] for item in categories])
+        completer.setCaseSensitivity(QtCore.Qt.CaseInsensitive)
+        self.ui.cmb_category.setCompleter(completer)
 
     def load_parts(self, index):
         self.ui.cmb_parts.clear()
@@ -131,6 +133,9 @@ class MainForm(QMainWindow):
                 parts = self.conn.get_parts(int(idcat))
                 for part in parts:
                     self.ui.cmb_parts.addItem(part[1], part[0])
+                completer = QCompleter([item[1] for item in parts])
+                completer.setCaseSensitivity(QtCore.Qt.CaseInsensitive)
+                self.ui.cmb_parts.setCompleter(completer)
 
     def load_all_data(self):
         if not self.ui.checkbox_all_period.isChecked():

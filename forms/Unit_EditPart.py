@@ -1,4 +1,5 @@
-from PySide6.QtWidgets import QDialog, QMessageBox
+from PySide6.QtWidgets import QDialog, QMessageBox, QCompleter
+from PySide6 import QtCore
 
 from DatabaseWorker import Data
 from forms.Form_EditPart import Ui_EditPartForm
@@ -21,18 +22,26 @@ class EditPartForm(QDialog):
         self.ui.btn_save.clicked.connect(self.on_click_save)
         self.ui.btn_add_category.clicked.connect(self.on_click_add_category)
         self.ui.btn_add_vendor.clicked.connect(self.on_click_add_vendor)
+        self.ui.btn_delete_category.clicked.connect(self.on_click_delete_category)
+        self.ui.btn_delete_vendor.clicked.connect(self.on_click_delete_vendor)
 
     def load_categories(self):
         self.ui.cmb_category.clear()
         categories = self.conn.get_categories()
         for category in categories:
             self.ui.cmb_category.addItem(category[1], category[0])
+        completer = QCompleter([item[1] for item in categories])
+        completer.setCaseSensitivity(QtCore.Qt.CaseInsensitive)
+        self.ui.cmb_category.setCompleter(completer)
 
     def load_vendors(self):
         self.ui.cmb_vendor.clear()
         vendors = self.conn.get_vendors()
         for vendor in vendors:
             self.ui.cmb_vendor.addItem(vendor[1], vendor[0])
+        completer = QCompleter([item[1] for item in vendors])
+        completer.setCaseSensitivity(QtCore.Qt.CaseInsensitive)
+        self.ui.cmb_vendor.setCompleter(completer)
 
     def on_changed_category(self, index):
         pass

@@ -59,11 +59,11 @@ margin: 5px;
 padding: 5px;
 }
 QPushButton:hover {
-background-color: rgba(2, 144, 0, 100);
+background-color: rgba(210, 210, 0, 100);
 color:white;
 }
 QPushButton:pressed {
-background-color: rgba(2, 144, 0, 150);
+background-color: rgba(210, 210, 0, 150);
 color:white;
 }</string>
          </property>

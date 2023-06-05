@@ -64,11 +64,11 @@ class Ui_RefPartsForm(object):
 "padding: 5px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"background-color: rgba(2, 144, 0, 100);\n"
+"background-color: rgba(210, 210, 0, 100);\n"
 "color:white;\n"
 "}\n"
 "QPushButton:pressed {\n"
-"background-color: rgba(2, 144, 0, 150);\n"
+"background-color: rgba(210, 210, 0, 150);\n"
 "color:white;\n"
 "}")
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>587</width>
+    <width>632</width>
     <height>489</height>
    </rect>
   </property>
@@ -44,6 +44,9 @@ font-family: &quot;Arial&quot;;
 font-size: 12pt;
 margin: 2px;
 padding: 3px;</string>
+        </property>
+        <property name="editable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -127,6 +130,9 @@ font-family: &quot;Arial&quot;;
 font-size: 12pt;
 margin: 2px;
 padding: 3px;</string>
+        </property>
+        <property name="editable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>

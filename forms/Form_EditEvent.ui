@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>464</width>
-    <height>266</height>
+    <width>548</width>
+    <height>346</height>
    </rect>
   </property>
   <property name="font">
@@ -131,6 +131,9 @@ font-size: 12pt;
 margin: 2px;
 padding: 3px;</string>
         </property>
+        <property name="editable">
+         <bool>true</bool>
+        </property>
         <property name="placeholderText">
          <string>Выберите категорию</string>
         </property>
@@ -183,6 +186,9 @@ font-family: &quot;Arial&quot;;
 font-size: 12pt;
 margin: 2px;
 padding: 3px;</string>
+        </property>
+        <property name="editable">
+         <bool>true</bool>
         </property>
         <property name="placeholderText">
          <string>Выберите зап. часть</string>

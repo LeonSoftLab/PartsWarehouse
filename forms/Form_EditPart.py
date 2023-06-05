@@ -23,7 +23,7 @@ class Ui_EditPartForm(object):
     def setupUi(self, EditPartForm):
         if not EditPartForm.objectName():
             EditPartForm.setObjectName(u"EditPartForm")
-        EditPartForm.resize(587, 489)
+        EditPartForm.resize(632, 489)
         self.verticalLayout_2 = QVBoxLayout(EditPartForm)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.frame1 = QFrame(EditPartForm)
@@ -50,6 +50,7 @@ class Ui_EditPartForm(object):
 "font-size: 12pt;\n"
 "margin: 2px;\n"
 "padding: 3px;")
+        self.cmb_category.setEditable(True)
 
         self.horizontalLayout.addWidget(self.cmb_category)
 
@@ -120,6 +121,7 @@ class Ui_EditPartForm(object):
 "font-size: 12pt;\n"
 "margin: 2px;\n"
 "padding: 3px;")
+        self.cmb_vendor.setEditable(True)
 
         self.horizontalLayout_2.addWidget(self.cmb_vendor)
 
@@ -258,7 +260,7 @@ class Ui_EditPartForm(object):
     # setupUi
 
     def retranslateUi(self, EditPartForm):
-        EditPartForm.setWindowTitle(QCoreApplication.translate("EditPartForm", u"Dialog", None))
+        EditPartForm.setWindowTitle(QCoreApplication.translate("EditPartForm", u"\u0420\u0435\u0437\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0437\u0430\u043f. \u0447\u0430\u0441\u0442\u0438", None))
         self.label_category.setText(QCoreApplication.translate("EditPartForm", u"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f", None))
         self.btn_add_category.setText(QCoreApplication.translate("EditPartForm", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c", None))
         self.btn_delete_category.setText(QCoreApplication.translate("EditPartForm", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))

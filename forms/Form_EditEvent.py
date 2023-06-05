@@ -23,7 +23,7 @@ class Ui_EditEventForm(object):
     def setupUi(self, EditEventForm):
         if not EditEventForm.objectName():
             EditEventForm.setObjectName(u"EditEventForm")
-        EditEventForm.resize(464, 266)
+        EditEventForm.resize(548, 346)
         font = QFont()
         font.setPointSize(9)
         font.setBold(False)
@@ -100,6 +100,7 @@ class Ui_EditEventForm(object):
 "font-size: 12pt;\n"
 "margin: 2px;\n"
 "padding: 3px;")
+        self.cmb_category.setEditable(True)
 
         self.horizontalLayout_5.addWidget(self.cmb_category)
 
@@ -133,6 +134,7 @@ class Ui_EditEventForm(object):
 "font-size: 12pt;\n"
 "margin: 2px;\n"
 "padding: 3px;")
+        self.cmb_part.setEditable(True)
 
         self.horizontalLayout_2.addWidget(self.cmb_part)
 

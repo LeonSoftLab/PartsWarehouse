@@ -304,6 +304,7 @@ class Ui_MainForm(object):
 "font-size: 12pt;\n"
 "margin: 2px;\n"
 "padding: 3px;")
+        self.cmb_category.setEditable(True)
 
         self.horizontalLayout_6.addWidget(self.cmb_category)
 
@@ -393,6 +394,7 @@ class Ui_MainForm(object):
 "font-size: 12pt;\n"
 "margin: 2px;\n"
 "padding: 3px;")
+        self.cmb_parts.setEditable(True)
 
         self.horizontalLayout_9.addWidget(self.cmb_parts)
 
@@ -445,11 +447,11 @@ class Ui_MainForm(object):
 "padding: 5px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"background-color: rgba(2, 144, 0, 100);\n"
+"background-color: rgba(210, 210, 0, 100);\n"
 "color:white;\n"
 "}\n"
 "QPushButton:pressed {\n"
-"background-color: rgba(2, 144, 0, 150);\n"
+"background-color: rgba(210, 210, 0, 150);\n"
 "color:white;\n"
 "}")
 
@@ -549,7 +551,7 @@ class Ui_MainForm(object):
     # setupUi
 
     def retranslateUi(self, MainForm):
-        MainForm.setWindowTitle(QCoreApplication.translate("MainForm", u"\u041e\u0441\u0442\u0430\u0442\u043a\u0438 \u043d\u0430 \u0441\u043a\u043b\u0430\u0434\u0435 \u0417/\u0427", None))
+        MainForm.setWindowTitle(QCoreApplication.translate("MainForm", u"\u041e\u0441\u0442\u0430\u0442\u043a\u0438 \u043d\u0430 \u0441\u043a\u043b\u0430\u0434\u0435 \u0437\u0430\u043f. \u0447\u0430\u0441\u0442\u0435\u0439 v1.2", None))
         self.label_work_period.setText(QCoreApplication.translate("MainForm", u"\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u043f\u0435\u0440\u0438\u043e\u0434:", None))
         self.checkbox_all_period.setText(QCoreApplication.translate("MainForm", u"\u0412\u0435\u0441\u044c \u043f\u0435\u0440\u0438\u043e\u0434", None))
         self.btn_update_all_data.setText(QCoreApplication.translate("MainForm", u"\u041e\u0431\u043d\u043e\u0432\u0438\u0442\u044c", None))

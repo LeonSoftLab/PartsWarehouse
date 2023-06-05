@@ -1,0 +1,10 @@
+#convert ui to py:
+
+pyside6-uic Form_AddName.ui -o Form_AddName.py
+pyside6-uic Form_EditEvent.ui -o Form_EditEvent.py
+pyside6-uic Form_EditPart.ui -o Form_EditPart.py
+pyside6-uic Form_Main.ui -o Form_Main.py
+pyside6-uic Form_refParts.ui -o Form_refParts.py
+
+#convert to exe:
+pyinstaller -F -w Main.py

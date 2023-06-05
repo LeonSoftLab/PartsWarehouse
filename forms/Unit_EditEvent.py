@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QDialog, QMessageBox
+from PySide6.QtWidgets import QDialog, QMessageBox, QCompleter
 from PySide6 import QtCore
 from datetime import datetime
 
@@ -30,6 +30,9 @@ class EditEventForm(QDialog):
         categories = self.conn.get_categories()
         for category in categories:
             self.ui.cmb_category.addItem(category[1], category[0])
+        completer = QCompleter([item[1] for item in categories])
+        completer.setCaseSensitivity(QtCore.Qt.CaseInsensitive)
+        self.ui.cmb_category.setCompleter(completer)
 
     def load_parts(self, index):
         if index > -1:

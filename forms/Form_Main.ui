@@ -17,7 +17,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Остатки на складе З/Ч</string>
+   <string>Остатки на складе зап. частей v1.2</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -468,6 +468,9 @@ font-size: 12pt;
 margin: 2px;
 padding: 3px;</string>
                </property>
+               <property name="editable">
+                <bool>true</bool>
+               </property>
                <property name="placeholderText">
                 <string>Выберите категорию</string>
                </property>
@@ -640,6 +643,9 @@ font-size: 12pt;
 margin: 2px;
 padding: 3px;</string>
                </property>
+               <property name="editable">
+                <bool>true</bool>
+               </property>
                <property name="placeholderText">
                 <string>Выберите зап. часть</string>
                </property>
@@ -710,11 +716,11 @@ margin: 5px;
 padding: 5px;
 }
 QPushButton:hover {
-background-color: rgba(2, 144, 0, 100);
+background-color: rgba(210, 210, 0, 100);
 color:white;
 }
 QPushButton:pressed {
-background-color: rgba(2, 144, 0, 150);
+background-color: rgba(210, 210, 0, 150);
 color:white;
 }</string>
          </property>
